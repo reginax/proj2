@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+%w(Potato Squash Wintermelon Corn Strawberry Fries).each do |name|
+  Plant.create name: name, birthTime: 1, maturation: 100
+end
