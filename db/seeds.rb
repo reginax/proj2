@@ -10,3 +10,8 @@
 # Plants.matdict[name]
 
 end
+
+# Make other farmers
+%w(McDonalds McJohn McJimmy McDixon McRoosevelt McBarack McBush).each do |name|
+  Farmer.create name: name
+end
