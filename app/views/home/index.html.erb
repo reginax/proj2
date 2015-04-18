@@ -1,5 +1,8 @@
 <h3>Welcome to FarmVillage</h3>
 
-<script>
-<%= add_gritter("This is a notification just for you!") %>
-</script>
+test
+
+<% if flash[:notice] %>
+<%= js add_gritter(flash[:notice], title:"Plant Ready To Harvest", time: 2000, :nodom_wrap  => true, position:"bottom_right") %>
+<% end %>
+
