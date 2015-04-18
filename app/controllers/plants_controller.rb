@@ -22,7 +22,7 @@ class PlantsController < ApplicationController
 
   def harvest
     @plant = Plant.find(params[:id])
-    @plant.trainer = current_trainer
+    @plant.farmer = current_farmer
     if @plant.save
       redirect_to root_path
     end

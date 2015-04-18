@@ -8,3 +8,8 @@
 %w(Potato Squash Wintermelon Corn Strawberry Fries).each do |name|
   Plant.create name: name, birthTime: 1, maturation: 100
 end
+
+# Make other farmers
+%w(McDonalds McJohn McJimmy McDixon McRoosevelt McBarack McBush).each do |name|
+  Farmer.create name: name
+end
