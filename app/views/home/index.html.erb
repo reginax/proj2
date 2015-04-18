@@ -5,3 +5,10 @@
 <script>
 <%= add_gritter("This is a notification just for you!") %>
 </script>
+
+<p><%= link_to 'Farmers:', farmers_path %> <%= Farmer.count %> registered</p>
+
+
+<%= button_to "My Farm", farm_path(id: @plant), :class => "button small", :method => :patch %> 
+
+<%= button_to "My Animals", animal_path(id: @animal), :class => "button small", :method => :patch %> 

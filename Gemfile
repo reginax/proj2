@@ -38,3 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "gritter", "1.1.0"
+gem "simple_form"
+gem "devise"
