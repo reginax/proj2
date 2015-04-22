@@ -4,5 +4,5 @@
 <% if @plant and current_farmer %>
   <p> A wild <%= @plant.name %> has appeared!</p>
   <!-- REPLACE THIS LINE BELOW -->
-  <%= button_to "Throw a Pokeball!", capture_path(id: @plant), :class => "button medium", :method => :patch %>
+  <%= button_to "Plot a Plant!", plot_path(id: @plant), :class => "button medium", :method => :patch %>
 <% end %>

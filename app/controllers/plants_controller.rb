@@ -1,8 +1,8 @@
 class PlantsController < ApplicationController
-	def capture
-		@captured = Plant.find(params[:id])
-		@captured.farmer_id = current_farmer.id
-		@captured.save
+	def plot
+		@plotted = Plant.find(params[:id])
+		@plotted.farmer_id = current_farmer.id
+		@plotted.save
 		redirect_to root_path
 	end
 

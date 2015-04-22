@@ -3,7 +3,7 @@
 <p>Email: <%= @farmer.email if @farmer.email %></p>
 
 <% if current_farmer.id == @farmer.id %>
-	<%= link_to "Create a new pokemon", plants_new_path, :class => "button medium" %>  
+	<%= link_to "Breed a new Plant", plants_new_path, :class => "button medium" %>  
 <% end %>
 
 
