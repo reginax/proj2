@@ -16,6 +16,14 @@ class PlantsController < ApplicationController
 		redirect_to @damaged.farmer
 	end
 
+	def water
+		@watered = Plant.find(params[:id])
+		@watered.health += 10
+		@watered.save
+		redirect_to @watered.farmer
+	end
+
+
 	def new
 		@plant = Plant.new
 	end
