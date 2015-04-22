@@ -3,17 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>FarmVillage Home</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<style type="text/css">
-    .bs-example{
-      margin: 20px;
-    }
-</style>
-</head> 
-<body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <style type="text/css">
+      .bs-example{
+        margin: 20px;
+      }
+  </style>
+  </head> 
+  <body>
+
 <div class="bs-example">
     <nav role="navigation" class="navbar navbar-default">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,7 +36,7 @@
               <li class="name"><%= link_to 'My Farm', current_farmer %></li>
                <li class="name"><%= link_to 'Plants', '/plants' %></li>
               <li><%= link_to root_path, class: 'btn btn-standard' do %>
-              <i class="glyphicon glyphicon-shopping-cart"></i>Store<% end %>
+              <i class="glyphicon glyphicon-shopping-cart"></i><% end %>
               </li>
              
         
