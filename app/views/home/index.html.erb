@@ -5,7 +5,9 @@
 <h3>Welcome to FarmVillage</h3>
 
 <%= Time.now.strftime("%m/%d/%Y %I:%M %p") %>
-<p><%= link_to 'Farmers:', farmers_path %> <%= Farmer.count %> registered</p>
+<p><%= link_to farmers_path, class: 'btn btn-standard' do %>
+  <i class="glyphicon glyphicon-user"></i> Farmers
+<%= Farmer.count %> registered<% end %></p>
 
 <% if @plant and current_farmer %>
   <p> A wild <%= @plant.name %> has appeared!</p>

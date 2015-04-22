@@ -30,8 +30,11 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li class="name"><%= link_to 'My Farm', current_farmer %></li>
-              <li class="name"><%= link_to 'Store', root_path %></li>
-              <li class="name"><%= link_to 'Plants', '/plants' %></li>
+               <li class="name"><%= link_to 'Plants', '/plants' %></li>
+              <li><%= link_to root_path, class: 'btn btn-standard' do %>
+              <i class="glyphicon glyphicon-shopping-cart"></i>Store<% end %>
+              </li>
+             
         
             </ul>
             <ul class="nav navbar-nav navbar-right">
