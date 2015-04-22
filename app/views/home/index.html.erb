@@ -1,4 +1,10 @@
+<% if flash[:notice] %>
+<%= js add_gritter(flash[:notice], title:"Plant Ready To Harvest", time: 2000, :nodom_wrap  => true, position:"bottom_right") %>
+<% end %>
+
 <h3>Welcome to FarmVillage</h3>
+
+<%= Time.now.strftime("%m/%d/%Y %I:%M %p") %>
 <p><%= link_to 'Farmers:', farmers_path %> <%= Farmer.count %> registered</p>
 
 <% if @plant and current_farmer %>

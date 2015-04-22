@@ -12,6 +12,8 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'simple_form'
 gem 'carrierwave'
+gem "gritter", "1.1.0"
+
 
 group :development do
   gem 'sqlite3'
