@@ -1,9 +1,9 @@
-<h3>Trainer</h3>
-<p>Name: <%= @trainer.name if @trainer.name %></p>
-<p>Email: <%= @trainer.email if @trainer.email %></p>
+<h3>Farmer</h3>
+<p>Name: <%= @farmer.name if @farmer.name %></p>
+<p>Email: <%= @farmer.email if @farmer.email %></p>
 
-<% if current_trainer.id == @trainer.id %>
-	<%= link_to "Create a new pokemon", pokemons_new_path, :class => "button medium" %>  
+<% if current_farmer.id == @farmer.id %>
+	<%= link_to "Create a new pokemon", plants_new_path, :class => "button medium" %>  
 <% end %>
 
 
@@ -15,7 +15,7 @@
     <th>Damage it!</th>
   </tr>
 
-	<% @trainer.pokemons.each do |p| %>
+	<% @farmer.plants.each do |p| %>
 		<tr>
 		<td><%= p.id %></td>
 		<td><%= p.name %></td>

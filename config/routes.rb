@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  devise_for :trainers
-  resources :trainers
-  patch 'capture', to: 'pokemons#capture'
-  get 'capture', to: 'pokemons#capture'
-  patch 'damage', to: 'pokemons#damage'
-  get 'pokemons', to: 'pokemons#new'
-  post 'pokemons', to: 'pokemons#create'
-  get 'pokemons/new', to: 'pokemons#new'
+  devise_for :farmers
+  resources :farmers
+  patch 'capture', to: 'plants#capture'
+  get 'capture', to: 'plants#capture'
+  patch 'damage', to: 'plants#damage'
+  get 'plants', to: 'plants#new'
+  post 'plants', to: 'plants#create'
+  get 'plants/new', to: 'plants#new'
 end

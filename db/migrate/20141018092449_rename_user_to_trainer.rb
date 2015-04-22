@@ -1,5 +1,5 @@
-class RenameUserToTrainer < ActiveRecord::Migration
+class RenameUserToFarmer < ActiveRecord::Migration
   def change
-    rename_table :users, :trainers
+    rename_table :users, :farmers
   end
 end

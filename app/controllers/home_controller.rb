@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
 
   def index
-    trainerless_pokemon = Pokemon.where(trainer:nil)
-    @pokemon = trainerless_pokemon.sample
+    farmerless_plant = Plant.where(farmer:nil)
+    @plant = farmerless_plant.sample
   end
 
 end

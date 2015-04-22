@@ -1,8 +1,8 @@
 <h3>Welcome to FarmVillage</h3>
-<p><%= link_to 'Farmers:', trainers_path %> <%= Trainer.count %> registered</p>
+<p><%= link_to 'Farmers:', farmers_path %> <%= Farmer.count %> registered</p>
 
-<% if @pokemon and current_trainer %>
-  <p> A wild <%= @pokemon.name %> has appeared!</p>
+<% if @plant and current_farmer %>
+  <p> A wild <%= @plant.name %> has appeared!</p>
   <!-- REPLACE THIS LINE BELOW -->
-  <%= button_to "Throw a Pokeball!", capture_path(id: @pokemon), :class => "button medium", :method => :patch %>
+  <%= button_to "Throw a Pokeball!", capture_path(id: @plant), :class => "button medium", :method => :patch %>
 <% end %>
