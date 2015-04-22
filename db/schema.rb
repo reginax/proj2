@@ -11,18 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401233844) do
+ActiveRecord::Schema.define(version: 20150422022410) do
 
-  create_table "pokemons", force: true do |t|
-    t.string   "name"
-    t.integer  "level"
-    t.integer  "trainer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "health"
-  end
-
-  create_table "trainers", force: true do |t|
+  create_table "farmers", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -38,7 +29,16 @@ ActiveRecord::Schema.define(version: 20150401233844) do
     t.string   "name"
   end
 
-  add_index "trainers", ["email"], name: "index_trainers_on_email", unique: true
-  add_index "trainers", ["reset_password_token"], name: "index_trainers_on_reset_password_token", unique: true
+  add_index "farmers", ["email"], name: "index_farmers_on_email", unique: true
+  add_index "farmers", ["reset_password_token"], name: "index_farmers_on_reset_password_token", unique: true
+
+  create_table "plants", force: true do |t|
+    t.string   "name"
+    t.integer  "level"
+    t.integer  "trainer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "health"
+  end
 
 end
