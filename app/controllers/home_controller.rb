@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 
   def index
-    flash[:notice] = "todo, change css for gritter"
+    trainerless_pokemon = Pokemon.where(trainer:nil)
+    @pokemon = trainerless_pokemon.sample
   end
 
 end

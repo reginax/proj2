@@ -1,11 +1,8 @@
-<%= Time.now.strftime("%m/%d/%Y at %I:%M %p") %>
+<h3>Welcome to PokePortal</h3>
+<p><%= link_to 'Trainers:', trainers_path %> <%= Trainer.count %> registered</p>
 
-<h3>Welcome to FarmVillage</h3>
-<p><%= link_to 'Farmers:', farmers_path %> <%= Farmer.count %> registered</p>
-
-
-<% if flash[:notice] %>
-<%= js add_gritter(flash[:notice], title:"Plant Ready To Harvest", time: 2000, :nodom_wrap  => true, position:"bottom_right") %>
+<% if @pokemon and current_trainer %>
+  <p> A wild <%= @pokemon.name %> has appeared!</p>
+  <!-- REPLACE THIS LINE BELOW -->
+  <%= button_to "Throw a Pokeball!", capture_path(id: @pokemon), :class => "button medium", :method => :patch %>
 <% end %>
-
-<%= button_to "Harvest", harvest_path(id: @plant), :class => "button small", :method => :patch %> 

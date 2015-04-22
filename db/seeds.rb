@@ -5,13 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-%w(Potato Squash Wintermelon Corn Strawberry Fries).each do |name|
-  Plant.create name: name, birthTime: 1, maturation: 100
-# Plants.matdict[name]
 
+# Make Pokemon
+%w(Squirtle Charmander Bulbasaur Pikachu).each do |name|
+  Pokemon.create name: name, level: rand(1..20), health: 100
 end
 
-# Make other farmers
-%w(McDonalds McJohn McJimmy McDixon McRoosevelt McBarack McBush).each do |name|
-  Farmer.create name: name
+# Make other trainers
+%w(Ash Gary Misty Brock).each do |name|
+  Trainer.create name: name, email: name+"@pokeportal.com", password: 'password'
 end
