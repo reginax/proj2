@@ -1,6 +1,6 @@
 <%# add navigation links to this file %>
 <% if farmer_signed_in? %>
-  <li><%= link_to edit_farmer_registration_path, class: 'btn btn-standard' do %>Settings<% end %>
+	<li><%= link_to 'Settings', edit_farmer_registration_path %></li>
 </li>
   <li><%= link_to 'Log Out', destroy_farmer_session_path, :method=>'delete' %></li>
 <% else %>
