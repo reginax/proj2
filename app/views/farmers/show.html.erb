@@ -31,7 +31,8 @@
         <td><%= p.health %></td>
         <td><%= link_to water_path(id: p), class: 'btn btn-medium' do %><i class="glyphicon glyphicon-tint"></i> Water
         <% end %></td>
-        <td><%= link_to damage_path(id: p), class: 'btn btn-medium' do %><i class="glyphicon glyphicon-fire"></i> Do Evil
+        <td><%= link_to harvest_path(id: p), class: 'btn btn-medium' do %><i class="glyphicon glyphicon-fire"></i> Harvest
+
         <% end %></td>
         </tr>
     <% end %>

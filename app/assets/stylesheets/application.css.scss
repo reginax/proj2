@@ -12,18 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
+ *= require freelancer
  */
- body {
-    background-color: #F8F8F8 !important;
-    color: white;
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size:14px18;
-    line-height: px;
-    background-image: image-url('bg.png');
-	background-repeat: no-repeat;
-	background-size: 100%;
-  }
-
-div {
-  opacity: 0.9;
-}

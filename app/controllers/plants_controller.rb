@@ -6,14 +6,11 @@ class PlantsController < ApplicationController
 		redirect_to root_path
 	end
 
-	def damage
-		@damaged = Plant.find(params[:id])
-		@damaged.health -= 10
-		@damaged.save
-		if @damaged.health <= 0
-			@damaged.destroy
-		end
-		redirect_to @damaged.farmer
+	def harvest
+		@harvested = Plant.find(params[:id])
+		@harvested.destroy
+		@harvested.save
+		redirect_to @harvested.farmer
 	end
 
 	def water

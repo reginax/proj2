@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :farmers
   patch 'plot', to: 'plants#plot'
   get 'plot', to: 'plants#plot'
-  patch 'damage', to: 'plants#damage'
-  get 'damage', to: 'plants#damage'
+  patch 'harvest', to: 'plants#harvest'
+  get 'harvest', to: 'plants#harvest'
   patch 'water', to: 'plants#water'
   get 'water', to: 'plants#water'
   get 'plants', to: 'plants#new'
