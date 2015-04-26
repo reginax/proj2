@@ -5,7 +5,7 @@
 <p><%= link_to farmers_path, class: 'btn btn-standard' do %>
 <%= Farmer.count %> Farmers registered<% end %></p>
 
-<% if @plant and current_farmer %>
+<% if @plant and current_space %>
   <p> A wild <%= @plant.name %> has appeared!</p>
   <!-- REPLACE THIS LINE BELOW -->
 <%= link_to plot_path(id: @plant), class: 'btn btn-success' do %>A Plant
