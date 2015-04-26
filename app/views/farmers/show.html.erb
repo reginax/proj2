@@ -27,7 +27,8 @@
     </tr>
     </thead>
     <tbody>
-    <% @farmer.plants.each do |p| %>
+    <% @farmer.spaces.each do |s| %>
+    p = s.plant
         <tr>
         <td><%= p.id %></td>
         <td><%= p.name %></td>

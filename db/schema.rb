@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150426064842) do
   create_table "plants", force: true do |t|
     t.string   "name"
     t.integer  "level"
-    t.integer  "farmer_id"
+    t.integer  "space_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "health"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150426064842) do
 
   create_table "spaces", force: true do |t|
     t.string   "name"
-    t.integer  "space_id"
+    t.integer  "farmer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

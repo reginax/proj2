@@ -3,7 +3,7 @@ class CreatePlants < ActiveRecord::Migration
     create_table :plants do |t|
       t.string :name
       t.integer :level
-      t.integer :farmer_id
+      t.integer :space_id
 
       t.timestamps
     end

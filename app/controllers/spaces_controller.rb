@@ -1,5 +1,6 @@
 class SpacesController < ApplicationController
 	before_filter :authenticate_space!
+  @plant
 
   	def index
     	@spaces = Space.all
