@@ -22,7 +22,28 @@
  <% if current_farmer.id == @farmer.id %>
     <%= link_to plants_new_path, class: 'btn btn-medium' do %>Breed New Plant
         <% end %>
-<% end %>           
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <h1>Your Crops</h1>
+    <% count = 0 %>
+      <% @farmer.spaces.each do |s| %>
+      <% count += 1 %>
+      <% p = s.plant %>
+      <% if p %>
+      <img src="//placehold.it/100x100/449955/FFF" class="btn btn-sm">
+      <% else %>
+      <img src="//placehold.it/99x99/449955/FFF" class="btn btn-sm">
+      <% end %>
+      <% if count % 3 == 0 %>
+      <br>
+      <% end %>
+    <% end %>
+</div>  
+
+    
+                      
   <table class="table table-striped">
     <thead>
     <tr>
