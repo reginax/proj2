@@ -43,6 +43,9 @@
                <a href="/">
                 <%=image_tag("FarmVillageLogo.png", height: '10%', width: '10%', alt: "Logo")%>
                 </a>
+                <% if farmer_signed_in? %>
+                dolladollabillz: <%= current_farmer.dolladollabillz %>
+                <% end %>
             
         </div>
         <!-- Collection of nav links and other content for toggling -->

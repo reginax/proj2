@@ -15,7 +15,7 @@ Plant.create name: "Cucumber", level: rand(1..20), health: 100, space_id: 4
 
 # Make other farmers
 %w(McJimmy McDonald McReagan McCarter McDixon McBarack).each do |name|
-  Farmer.create name: name, email: name+"@farmvillage.com", password: 'password'
+  Farmer.create name: name, email: name+"@farmvillage.com", password: 'password', dolladollabillz: 0
 end
 
 # Make spaces
