@@ -17,8 +17,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-  $(".btn").click(function(){
-    $("#myModal").modal('show');
+   $('a.modalLink').click(function(e){
+    var id = $(this).attr('href');
+    if (id=="#first") {
+        $("#first").modal('show');
+    } else {
+        $("#second").modal('show');
+    }
   });
 });
 </script>
@@ -33,24 +38,40 @@ $(document).ready(function(){
   <div class="row">
     <h1>Store</h1>
     <div class="row">
-      <div class="btn btn-sm"><a href="#" title="Peach"><%=image_tag("Peach.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a></div>
-     <div class="btn btn-sm"><a href="#" title="Watermelon"><%=image_tag("Watermelon.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a></div>
+      <a href="#first" class="modalLink"><%=image_tag("Peach.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
+     <a href="#second" class="modalLink"><%=image_tag("Watermelon.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
     </div>
-    <hr>
-    <a href="/">Thanks for Shopping!</a>
-    <hr>
+
   </div>
 </div>
 
-<div id="myModal" class="modal fade">
+<div id="first" class="modal fade">
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title">Capsicum annuum</h4>
+                  <h4 class="modal-title">Prunus persica</h4>
               </div>
               <div class="modal-body">
-                  <p>The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum L.</p>
+                  <p>Fabulous peachy fact: peaches were once known as Persian apples.</p>
+                  <p class="text-warning"><small>Do you want to make this purchase?</small></p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <%= link_to buy_path(id: @plant), class: 'btn btn-standard' do %>Purchase<% end %>
+              </div>
+          </div>
+      </div>
+  </div>             
+<div id="second" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Citrullus lanatus</h4>
+              </div>
+              <div class="modal-body">
+                  <p>Watermelon is both fruit and vegetable. The rind is entirely edible!</p>
                   <p class="text-warning"><small>Do you want to make this purchase?</small></p>
               </div>
               <div class="modal-footer">
