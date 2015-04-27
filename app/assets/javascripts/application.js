@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require foundation
 //= require_tree .
+//= require gritter
