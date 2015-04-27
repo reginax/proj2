@@ -28,17 +28,18 @@
     </thead>
     <tbody>
     <% @farmer.spaces.each do |s| %>
-    p = s.plant
-        <tr>
-        <td><%= p.id %></td>
-        <td><%= p.name %></td>
-        <td><%= p.health %></td>
-        <td><%= link_to water_path(id: p), class: 'btn btn-medium' do %>Water
+    <% p = s.plant %>
+    <% if p %> 
+    <tr>
+      <td><%= p.id %></td>
+      <td><%= p.name %></td>
+      <td><%= p.health %></td>
+      <td><%= link_to water_path(id: p), class: 'btn btn-medium' do %>Water
         <% end %></td>
-        <td><%= link_to harvest_path(id: p), class: 'btn btn-medium' do %>Harvest
-
+      <td><%= link_to harvest_path(id: p), class: 'btn btn-medium' do %>Harvest
+        <% end %>
         <% end %></td>
-        </tr>
+    </tr>
     <% end %>
 
 </table>

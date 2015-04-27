@@ -15,3 +15,8 @@ end
 %w(McJimmy McDonald McReagan McCarter McDixon McBarack).each do |name|
   Farmer.create name: name, email: name+"@farmvillage.com", password: 'password'
 end
+
+# Make spaces
+%w(1 2 3 4 5 6).each do |sp|
+  Space.create name: sp, farmer_id: 1, created_at: 0, updated_at: 0
+end
