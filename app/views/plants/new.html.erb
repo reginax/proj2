@@ -1,8 +1,11 @@
+<% if true %>
+<%= js add_gritter("Create a plant of your own!", title:"Get creative!", time: 2000, :nodom_wrap  => true, position:"bottom_left") %>
+<% end %>
+
 <div class="download-section">
     <div class="container">
         <div class="col-lg-8">
-            <h2>HEY YOU.</h2>
-        	<p>Would you like to invent a plant of your own?</p>
+            <h2>HAY.</h2>
 			<%= simple_form_for @plant do |p| %>
 		  <%= p.input :name %>
 		  <%= p.button :submit %>

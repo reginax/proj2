@@ -1,11 +1,17 @@
-<% if 1==1 %>
+<% if true %>
 <%= js add_gritter("Do you have what it takes to be the best farmer?", title:"Welcome to FarmVillage", time: 2000, :nodom_wrap  => true, position:"bottom_left") %>
 <% end %>
+<%=image_tag("farmer.png", height: '10%', width: '10%', alt: 'Logo', align: 'center')%>
+<a href="http://time.is/Berkeley" id="time_is_link" rel="nofollow" style="font-size:20px; font-family: Montserrat">Current time: </a>
+<span id="Berkeley_z14e" style="font-size:20px; font-family: Montserrat"></span>
+<script src="http://widget.time.is/t.js"></script>
+<script>
+time_is_widget.init({Berkeley_z14e:{}});
+</script>
 
-<%= Time.now.strftime("%m/%d/%Y %I:%M %p") %>
-<p><%= link_to farmers_path, class: 'btn btn-standard' do %>
-<%= Farmer.count %> Farmers registered<% end %></p>
-
+<%=image_tag("farmera.png", height: '10%', width: '10%', alt: 'Logo', align: 'center')%>
+<p> <%= link_to farmers_path, class: 'btn btn-standard' do %>
+<%= Farmer.count %> Farmers registered<% end %> </p>
 <% if @plant and current_farmer %>
 <p><%= link_to plot_path(id: @plant), class: 'btn btn-standard' do %>
 A <%= @plant.name %>  has appeared! <% end %></p>

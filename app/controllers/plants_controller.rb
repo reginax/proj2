@@ -26,6 +26,12 @@ class PlantsController < ApplicationController
 		@plant = Plant.new
 	end
 
+	def buy
+		@farmer.dolladollabillz -= 10
+		@farmer.save
+		@plant = Plant.new
+	end
+
 	 def create
     	@plant = Plant.create(plant_params)
     	@plant.health = 100

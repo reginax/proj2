@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get 'plants', to: 'plants#new'
   post 'plants', to: 'plants#create'
   get 'plants/new', to: 'plants#new'
-  get "/show", to: "store#show"
+  get '/show', to: 'store#show'
+  patch'buy', to: 'plants#buy'
+  get 'buy', to: 'plants#buy'
+
 end
