@@ -3,7 +3,6 @@ class PlantsController < ApplicationController
 	def plot
 		@plotted = Plant.find(params[:id])
 		# @plotted.space_id = current_space.id
-    @plotted.space_id = 1
 		@plotted.save
 		redirect_to root_path
 	end

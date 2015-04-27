@@ -7,9 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Make Plant
-%w(Squash Potato Tomato Cucumber Grape).each do |name|
-  Plant.create name: name, level: rand(1..20), health: 100, space_id: 1
-end
+
+Plant.create name: "Squash", level: rand(1..20), health: 100, space_id: 1
+Plant.create name: "Tomato", level: rand(1..20), health: 100, space_id: 2
+Plant.create name: "Potato", level: rand(1..20), health: 100, space_id: 3
+Plant.create name: "Cucumber", level: rand(1..20), health: 100, space_id: 4
 
 # Make other farmers
 %w(McJimmy McDonald McReagan McCarter McDixon McBarack).each do |name|
