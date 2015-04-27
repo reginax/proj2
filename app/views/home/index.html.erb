@@ -1,13 +1,16 @@
 <% if flash[:notice] %>
 <%= js add_gritter(flash[:notice], title:"Plant Ready To Harvest", time: 2000, :nodom_wrap  => true, position:"bottom_right") %>
 <% end %>
+
 <%= Time.now.strftime("%m/%d/%Y %I:%M %p") %>
 <p><%= link_to farmers_path, class: 'btn btn-standard' do %>
 <%= Farmer.count %> Farmers registered<% end %></p>
 
-<% if @plant and current_space %>
-  <p> A wild <%= @plant.name %> has appeared!</p>
-  <!-- REPLACE THIS LINE BELOW -->
-<%= link_to plot_path(id: @plant), class: 'btn btn-success' do %>A Plant
-<% end %>
+<% if @plant and current_farmer %>
+<p> A wild has appeared!</p>
+
+<p><%= link_to plot_path(id: @plant), class: 'btn btn-standard' do %>
+A <%= @plant.name %>  has appeared! <% end %></p>
+
+
 <% end %>

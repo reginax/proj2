@@ -8,7 +8,7 @@
 
 # Make Plant
 %w(Squash Potato Tomato Cucumber Grape).each do |name|
-  Plant.create name: name, level: rand(1..20), health: 100
+  Plant.create name: name, level: rand(1..20), health: 100, space_id: 1
 end
 
 # Make other farmers
