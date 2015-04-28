@@ -6,14 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Make Plant
-
-id = 1
-while (id <= 6)
-  Plant.create name: "Watermelon", level: rand(1..20), health:0, space_id: id
-  Plant.create name: "Peach", level: rand(1..20), health:0, space_id: id + 1
-  id += 2
-end
 
 
 # Make other farmers
@@ -24,6 +16,19 @@ end
 # Make spaces
 id = 1
 while (id <= 9)
-  Space.create name: "foo", farmer_id: 1, created_at: 0, updated_at: 0
+  Space.create name: "foo", farmer_id: 1, created_at: 0, updated_at: 0, filled: 0
   id += 1
 end
+
+# Make Plant
+id = 1
+while (id <= 6)
+  Plant.create name: "Watermelon", level: rand(1..20), health:0, space_id: id
+  Plant.create name: "Peach", level: rand(1..20), health:0, space_id: id + 1
+  s = Space.find(id)
+  s.filled = 1
+  s = Space.find(id + 1)
+  s.filled = 1
+  id += 2
+end
+

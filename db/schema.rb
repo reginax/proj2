@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427064543) do
+ActiveRecord::Schema.define(version: 20150428014110) do
 
   create_table "farmers", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150427064543) do
     t.integer  "farmer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "filled"
   end
 
 end
