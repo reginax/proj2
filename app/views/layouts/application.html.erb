@@ -55,10 +55,13 @@
               <li class="name"><%= link_to 'Farm', current_farmer %></li>
                <li class="name"><%= link_to 'Plants', '/plants' %></li>
                <li class="name"><%= link_to 'Store', '/show' %></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <%= render 'layouts/navigation_links' %>
             </ul>
+
+
         </div>
     </nav>
 
@@ -68,6 +71,9 @@
 <div class="download-section">
         <div class="container">
             <div class="col-sm-8">
+            <%=image_tag("farmer.png", height: '10%', width: '10%', alt: 'Logo', align: 'center')%>
+            <a style="font-size:20px; font-family: Montserrat"><%= Time.now.strftime("%m/%d/%Y %I:%M %p") %></a>
+            <%=image_tag("farmera.png", height: '10%', width: '10%', alt: 'Logo', align: 'center')%>
               <%= render 'layouts/messages' %>
               <%= yield %>
               </div>
