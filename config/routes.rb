@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post 'plants', to: 'plants#create'
   get 'plants/new', to: 'plants#new'
   get '/show', to: 'store#show'
-  patch'buy', to: 'plants#buy'
+  patch 'buy', to: 'plants#buy'
   get 'buy', to: 'plants#buy'
 
 end

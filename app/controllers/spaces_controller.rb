@@ -9,4 +9,9 @@ class SpacesController < ApplicationController
   	def show
     	@space = Space.find(params[:id])
   	end
+
+  	def new
+		  @farmer = Farmer.new
+	  end
+
 end
