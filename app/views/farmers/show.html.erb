@@ -28,15 +28,20 @@
   <div class="row">
     <h1>Your Crops</h1>
     <% count = 0 %>
-      <% @farmer.spaces.each do |s| %>
-      <% count += 1 %>
-      <% p = s.plant %>
-      <% if p %>
-      <img src="//placehold.it/100x100/449955/FFF" class="btn btn-sm">
-      <% else %>
-      <img src="//placehold.it/99x99/449955/FFF" class="btn btn-sm">
-      <% end %>
-      <% if count % 3 == 0 %>
+    <% @farmer.spaces.each do |s| %>
+    <% count += 1 %>
+    <% p = s.plant %>
+    <% if !p %>
+    <img src="//placehold.it/99x99/449955/FFF" class="btn btn-sm">
+    <% else %>
+    <% if p.name == "Watermelon" %>
+    <img src="//placehold.it/100x100/449955/FFF" class="btn btn-sm">
+    <% end %>
+    <% if p.name == "Peach" %>
+    <img src="//placehold.it/101x101/449955/FFF" class="btn btn-sm">
+    <% end %>
+    <% end %>
+    <% if count % 3 == 0 %>
       <br>
       <% end %>
     <% end %>

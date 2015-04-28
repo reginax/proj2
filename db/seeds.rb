@@ -8,10 +8,13 @@
 
 # Make Plant
 
-Plant.create name: "Squash", level: rand(1..20), health: 100, space_id: 1
-Plant.create name: "Tomato", level: rand(1..20), health: 100, space_id: 2
-Plant.create name: "Potato", level: rand(1..20), health: 100, space_id: 3
-Plant.create name: "Cucumber", level: rand(1..20), health: 100, space_id: 4
+id = 1
+while (id <= 6)
+  Plant.create name: "Watermelon", level: rand(1..20), health:0, space_id: id
+  Plant.create name: "Peach", level: rand(1..20), health:0, space_id: id + 1
+  id += 2
+end
+
 
 # Make other farmers
 %w(McJimmy McDonald McReagan McCarter McDixon McBarack).each do |name|
@@ -19,6 +22,8 @@ Plant.create name: "Cucumber", level: rand(1..20), health: 100, space_id: 4
 end
 
 # Make spaces
-%w(1 2 3 4 5 6).each do |sp|
-  Space.create name: sp, farmer_id: 1, created_at: 0, updated_at: 0
+id = 1
+while (id <= 9)
+  Space.create name: "foo", farmer_id: 1, created_at: 0, updated_at: 0
+  id += 1
 end
