@@ -50,10 +50,7 @@ class PlantsController < ApplicationController
 	end
 
 	 def create
-	 	if !current_farmer.space
-	 		current_farmer.space = Space.create(name: current_farmer.email).save
-	 		current_farmer.space.farmer_id = current_farmer.id
-	 	end
+
     	@plant = Plant.create(plant_params)
     	@plant.health = 100
 		@plant.level = 1

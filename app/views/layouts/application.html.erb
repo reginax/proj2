@@ -74,9 +74,7 @@
             <%=image_tag("farmer.png", height: '10%', width: '10%', alt: 'Logo', align: 'center')%>
             <a style="font-size:20px; font-family: Montserrat"><%= Time.now.strftime("%m/%d/%Y %I:%M %p") %></a>
             <%=image_tag("farmera.png", height: '10%', width: '10%', alt: 'Logo', align: 'center')%>
-              <%= render 'layouts/messages' %>               
-              <% if current_farmer %>
-            <p><%= link_to harvest_path(id: @plant), class: 'btn btn-standard' do %>Harvest (Temporary)!<% end %></p><% end %>
+              <%= render 'layouts/messages' %>
               <%= yield %>
               </div>
             </div>
