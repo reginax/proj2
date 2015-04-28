@@ -55,10 +55,13 @@
               <li class="name"><%= link_to 'Farm', current_farmer %></li>
                <li class="name"><%= link_to 'Plants', '/plants' %></li>
                <li class="name"><%= link_to 'Store', '/show' %></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <%= render 'layouts/navigation_links' %>
             </ul>
+
+
         </div>
     </nav>
 
@@ -68,7 +71,9 @@
 <div class="download-section">
         <div class="container">
             <div class="col-sm-8">
-              <%= render 'layouts/messages' %>
+              <%= render 'layouts/messages' %>               
+              <% if current_farmer %>
+            <p><%= link_to harvest_path(id: @plant), class: 'btn btn-standard' do %>Harvest (Temporary)!<% end %></p><% end %>
               <%= yield %>
               </div>
             </div>

@@ -1,7 +1,11 @@
 class PlantsController < ApplicationController
 
 	def plot
-		current_farmer.dolladollabillz += 5
+		if !current_farmer.dolladollabillz?
+			@current_farmer.dolladollabillz = 0
+		end
+		current_farmer.dolladollabillz += 2
+		current_farmer.save
 		@plotted = Plant.find(params[:id])
 		# @plotted.space_id = current_space.id
 		@plotted.save
@@ -9,11 +13,15 @@ class PlantsController < ApplicationController
 	end
 
 	def harvest
-		current_farmer.dolladollabillz += 10
+		if !current_farmer.dolladollabillz?
+			current_farmer.dolladollabillz = 0
+		end
+		current_farmer.dolladollabillz += 5
+		current_farmer.save
 		@harvested = Plant.find(params[:id])
 		@harvested.destroy
 		@harvested.save
-		redirect_to @harvested.space
+		redirect_to root_path
 	end
 
 	def water
@@ -23,7 +31,6 @@ class PlantsController < ApplicationController
 		redirect_to @watered.space
 	end
 
-
 	def new
 		@plant = Plant.new
 	end
@@ -31,15 +38,15 @@ class PlantsController < ApplicationController
 	def buy
 		@farmer = current_farmer
 		if !@farmer.dolladollabillz?
-			@farmer.dolladollabillz = 11
+			@farmer.dolladollabillz = 0
 		end
-		if @farmer.dolladollabillz < 11
+		if @farmer.dolladollabillz < 5
 			flash[:error] = "Not enough money"
 		else 
-			@farmer.dolladollabillz -= 10
+			@farmer.dolladollabillz -= 5
 		end
 		@farmer.save
-		redirect_to root_path
+		redirect_to show_path
 	end
 
 	 def create
