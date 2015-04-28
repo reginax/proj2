@@ -39,6 +39,8 @@ class PlantsController < ApplicationController
 			@farmer.dolladollabillz -= 10
 		end
 		@farmer.save
+    newplant = Plant.create(name: params[:type])
+    newplant.space_id = current_farmer.spaces.where(filled == 0).sample.id
 		redirect_to root_path
 	end
 
