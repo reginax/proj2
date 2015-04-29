@@ -17,11 +17,12 @@ class PlantsController < ApplicationController
             current_farmer.dolladollabillz = 0
         end
         current_farmer.dolladollabillz += 5
-        current_farmer.save
         @harvested = Plant.find(params[:id])
         @harvested.space.filled = 0
+        # @harvested.space.plant = nil
         @harvested.space.save
         @harvested.destroy
+        current_farmer.save
         # @harvested.save
         redirect_to current_farmer
     end

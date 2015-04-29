@@ -57,6 +57,7 @@ $(document).ready(function(){
       <% if !p %>
          <%=image_tag("grass.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
       <% else %>
+      <% p.space = s %>
         <% if p.name == "Watermelon" %>
             <a href="#watermelon" class="modalLink"><%=image_tag("Watermelon.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
             <div id="watermelon" class="modal fade">
