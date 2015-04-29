@@ -52,13 +52,55 @@ $(document).ready(function(){
       <% count += 1 %>
       <% p = s.plant %>
       <% if !p %>
-         <img src="//placehold.it/99x99/449955/FFF" class="btn btn-sm">
+         <%=image_tag("grass.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
       <% else %>
         <% if p.name == "Watermelon" %>
             <a href="#second" class="modalLink"><%=image_tag("Watermelon.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
+            <div id="second" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Citrullus lanatus</h4>
+                  </div>
+                  <div class="modal-body">
+                      <p>Watermelon is both fruit and vegetable. The rind is entirely edible!</p>
+                  </div>
+                  <div class="modal-footer">
+                  <%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
+                  <% end %>
+                  <%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
+                  <% end %>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+              </div>
+          </div>
+      </div>
+  </div>   
         <% end %>
         <% if p.name == "Peach" %>
             <a href="#first" class="modalLink"><%=image_tag("Peach.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
+            <div id="first" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Prunus persica</h4>
+              </div>
+              <div class="modal-body">
+                  <p>Fabulous peachy fact: peaches were once known as Persian apples.</p>
+              </div>
+              <div class="modal-footer">
+              <%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
+              <% end %>
+              <%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
+              <% end %>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+              </div>
+          </div>
+      </div>
+  </div>            
         <% end %>
       <% end %>
     <% if count % 3 == 0 %>
@@ -91,52 +133,12 @@ $(document).ready(function(){
               <% end %>
             <%= p.health %>
           </td>
-          <td><%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
-              <% end %></td>
-          <td><%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
-              <% end %></td>
         </tr>
       <% end %>
     <% end %>
 
   </table>
-</div>
-
-<div id="first" class="modal fade">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title">Prunus persica</h4>
-              </div>
-              <div class="modal-body">
-                  <p>Fabulous peachy fact: peaches were once known as Persian apples.</p>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-              </div>
-          </div>
-      </div>
-  </div>             
-<div id="second" class="modal fade">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title">Citrullus lanatus</h4>
-              </div>
-              <div class="modal-body">
-                  <p>Watermelon is both fruit and vegetable. The rind is entirely edible!</p>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-              </div>
-          </div>
-      </div>
-  </div>             
-
+</div>  
 </body>
 </html>
 

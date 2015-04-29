@@ -23,7 +23,7 @@ class PlantsController < ApplicationController
         @harvested.space.save
         @harvested.destroy
         # @harvested.save
-        redirect_to root_path
+        redirect_to current_farmer
     end
 
     def water
