@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428014110) do
+ActiveRecord::Schema.define(version: 20150429084221) do
 
   create_table "farmers", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150428014110) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.integer  "dolladollabillz"
+    t.integer  "dolladollabillz",        default: 30, null: false
   end
 
   add_index "farmers", ["email"], name: "index_farmers_on_email", unique: true
