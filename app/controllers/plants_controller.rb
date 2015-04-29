@@ -34,7 +34,7 @@ class PlantsController < ApplicationController
         end
         @watered.health += 10
         @watered.save
-        redirect_to current_farmer
+        redirect_to(:back)
     end
 
     def new
