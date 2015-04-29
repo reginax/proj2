@@ -208,8 +208,14 @@ $(document).ready(function(){
               <% end %>
             <%= p.health %>
           </td>
+          <% if current_farmer.id != @farmer.id %>
           <td>
           <%= link_to steal_path(id: p.id), class: 'btn btn-medium' do %>Steal<% end %></td>
+          <td>
+          <%= link_to squash_path(id: p.id), class: 'btn btn-medium' do %>Squash<% end %></td>
+
+
+          <% end %>
         </tr>
       <% end %>
     <% end %>
