@@ -21,6 +21,9 @@ class PlantsController < ApplicationController
 		@harvested = Plant.find(params[:id])
 		@harvested.destroy
 		@harvested.save
+		targetspace = current_farmer.spaces.where(filled:1).sample
+		targetspace.filled = 0
+		@farmer.spaces.save
 		redirect_to root_path
 	end
 
@@ -46,16 +49,17 @@ class PlantsController < ApplicationController
 			@farmer.dolladollabillz -= 5
 		end
 		@farmer.save
-    newplant = Plant.create(name: params[:type])
-    targetspace = current_farmer.spaces.where(filled:0).sample
-    newplant.space = targetspace
-    targetspace.plant = newplant
-    targetspace.filled = 1
+	    newplant = Plant.create(name: params[:type])
+	    targetspace = current_farmer.spaces.where(filled:0).sample
+	    newplant.space = targetspace
+	    targetspace.plant = newplant
+	    targetspace.filled = 1
+	    targetspace.save
+	    newplant.save
 		redirect_to show_path
 	end
 
 	 def create
-
     	@plant = Plant.create(plant_params)
     	@plant.health = 100
 		@plant.level = 1

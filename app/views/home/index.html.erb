@@ -7,6 +7,4 @@
 <p><%= link_to plot_path(id: @plant), class: 'btn btn-standard' do %>
 A <%= @plant.name %>  has appeared!
 <% end %></p>
-<% if current_farmer %>
-<p><%= link_to harvest_path(id: @plant), class: 'btn btn-standard' do %>Harvest  <%= @plant.name %><% end %></p><% end %>
 <% end %>
