@@ -71,7 +71,9 @@ $(document).ready(function(){
                       <p>Watermelon is both fruit and vegetable. The rind is entirely edible!</p>
                   </div>
                   <div class="modal-footer">
+                  <% if current_farmer.id == @farmer.id %>
                   <%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
+                  <% end %>
                   <% end %>
                   <%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
                   <% end %>
@@ -94,7 +96,9 @@ $(document).ready(function(){
                   <p>One educational science experiment involves attaching electrodes to a lemon and using it as a battery to produce electricity.</p>
                   </div>
                   <div class="modal-footer">
+                    <% if current_farmer.id == @farmer.id %>
                   <%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
+                  <% end %>
                   <% end %>
                   <%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
                   <% end %>
@@ -118,7 +122,9 @@ $(document).ready(function(){
                   <p>Cannabis has long been used for hemp fibre, for seed and seed oils, and for medicinal purposes.</p>
                   </div>
                   <div class="modal-footer">
+                    <% if current_farmer.id == @farmer.id %>
                   <%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
+                  <% end %>
                   <% end %>
                   <%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
                   <% end %>
@@ -142,7 +148,9 @@ $(document).ready(function(){
                               <p>In the Ancient Greek mythology, the pomegranate was also known as the "fruit of the dead".</p>
                           </div>
                   <div class="modal-footer">
+                    <% if current_farmer.id == @farmer.id %>
                   <%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
+                  <% end %>
                   <% end %>
                   <%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
                   <% end %>
@@ -166,7 +174,9 @@ $(document).ready(function(){
                   <p>Fabulous peachy fact: peaches were once known as Persian apples.</p>
               </div>
               <div class="modal-footer">
+                <% if current_farmer.id == @farmer.id %>
               <%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
+              <% end %>
               <% end %>
               <%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
               <% end %>
