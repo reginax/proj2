@@ -9,15 +9,15 @@
 
 
 # Make other farmers
+farmid = 1
 %w(McJimmy McDonald McReagan McCarter McDixon McBarack).each do |name|
   Farmer.create name: name, email: name+"@farmvillage.com", password: 'password', dolladollabillz: 0
-end
-
-# Make spaces
-id = 1
-while (id <= 9)
-  Space.create name: "foo", farmer_id: 1, created_at: 0, updated_at: 0, filled: 0
-  id += 1
+  spacenum = 1
+  while (spacenum <= 9)
+    Space.create name: "foo", farmer_id: farmid, created_at: 0, updated_at: 0, filled: 0
+    spacenum += 1
+  end
+  farmid += 1
 end
 
 # Make Plant
