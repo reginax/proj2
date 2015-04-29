@@ -6,46 +6,66 @@
 
 <html lang="en">
 <head>
-  <title>Farmer</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Store</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+   $('a.modalLink').click(function(e){
+    var id = $(this).attr('href');
+    if (id=="#first") {
+        $("#first").modal('show');
+    } else {
+        $("#second").modal('show');
+    }
+  });
+});
+</script>
+
+<style type="text/css">
+    .bs-example{
+      margin: 0px;
+    }
+</style>
 </head>
 <body>
+
 <div class="container">
   <h2><%= @farmer.name if @farmer.name %>'s Precious</h2>
  <% if current_farmer.id == @farmer.id %>
     <%= link_to plants_new_path, class: 'btn btn-medium' do %>Breed New Plant
-        <% end %>
-<% end %>
-
+    <% end %>
+  <% end %>
+</div>
 <div class="container">
   <div class="row">
     <h1>Your Crops</h1>
-    <% count = 0 %>
-    <% @farmer.spaces.each do |s| %>
-    <% count += 1 %>
-    <% p = s.plant %>
-    <% if !p %>
-    <img src="//placehold.it/99x99/449955/FFF" class="btn btn-sm">
-    <% else %>
-    <% if p.name == "Watermelon" %>
-    <img src="//placehold.it/100x100/449955/FFF" class="btn btn-sm">
-    <% end %>
-    <% if p.name == "Peach" %>
-    <img src="//placehold.it/101x101/449955/FFF" class="btn btn-sm">
-    <% end %>
-    <% end %>
+      <% count = 0 %>
+      <% @farmer.spaces.each do |s| %>
+      <% count += 1 %>
+      <% p = s.plant %>
+      <% if !p %>
+         <img src="//placehold.it/99x99/449955/FFF" class="btn btn-sm">
+      <% else %>
+        <% if p.name == "Watermelon" %>
+            <a href="#second" class="modalLink"><%=image_tag("Watermelon.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
+        <% end %>
+        <% if p.name == "Peach" %>
+            <a href="#first" class="modalLink"><%=image_tag("Peach.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
+        <% end %>
+      <% end %>
     <% if count % 3 == 0 %>
       <br>
       <% end %>
     <% end %>
-</div>  
+   </div>  
                       
   <table class="table table-striped">
     <thead>
@@ -55,26 +75,61 @@
         <th>Health</th>
     </tr>
     </thead>
+
     <tbody>
-    <% @farmer.spaces.each do |s| %>
-    <% p = s.plant %>
-    <% if p %> 
-    <tr>
-      <td><%= p.id %></td>
-      <td><%= p.name %></td>
-      <td><%= p.health %></td>
-      <td><%= link_to water_path(id: p), class: 'btn btn-medium' do %>Water
-        <% end %></td>
-      <td><%= link_to harvest_path(id: p), class: 'btn btn-medium' do %>Harvest
-        <% end %>
-        <% end %></td>
-    </tr>
+      <% @farmer.spaces.each do |s| %>
+      <% p = s.plant %>
+      <% if p %> 
+        <tr>
+          <td><%= p.id %></td>
+          <td><%= p.name %></td>
+          <td><%= p.health %></td>
+          <td><%= link_to water_path(id: @plant), class: 'btn btn-medium' do %>Water
+              <% end %></td>
+          <td><%= link_to harvest_path(id: @plant), class: 'btn btn-medium' do %>Harvest
+              <% end %></td>
+        </tr>
+      <% end %>
     <% end %>
 
-</table>
+  </table>
 </div>
+
+<div id="first" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Prunus persica</h4>
+              </div>
+              <div class="modal-body">
+                  <p>Fabulous peachy fact: peaches were once known as Persian apples.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+              </div>
+          </div>
+      </div>
+  </div>             
+<div id="second" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Citrullus lanatus</h4>
+              </div>
+              <div class="modal-body">
+                  <p>Watermelon is both fruit and vegetable. The rind is entirely edible!</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+              </div>
+          </div>
+      </div>
+  </div>             
 
 </body>
 </html>
-
 
