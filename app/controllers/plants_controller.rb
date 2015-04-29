@@ -40,6 +40,15 @@ class PlantsController < ApplicationController
 
     def buy
         @farmer = current_farmer
+        @allFilled = true
+        for s in @farmer.spaces
+            if s.filled = 0 
+                @allFilled = false
+            end
+        end
+        if @allFilled = true
+            flash[:error] = "No more space in your farm!"
+        end
         if !@farmer.dolladollabillz?
             @farmer.dolladollabillz = 0
         end
@@ -49,13 +58,13 @@ class PlantsController < ApplicationController
             @farmer.dolladollabillz -= 5
         end
         @farmer.save
-        newplant = Plant.create(name: params[:type])
-        targetspace = @farmer.spaces.where(filled:0).sample
-        newplant.space = targetspace
-        targetspace.plant = newplant
-        targetspace.filled = 1
-        targetspace.save
-        newplant.save
+        @newplant = Plant.create(name: params[:type])
+        @targetspace = @farmer.spaces.where(filled:0).sample
+        @newplant.space = @targetspace
+        @targetspace.plant = @newplant
+        @targetspace.filled = 1
+        @targetspace.save
+        @newplant.save
         @farmer.save
         redirect_to show_path
     end
