@@ -49,6 +49,16 @@ class PlantsController < ApplicationController
         @mine.plant.save
     end
 
+    def squash
+        @damaged = Plant.find(params[:id])
+        if !@damaged.health?
+            @damaged.health = 0
+        end
+        @damaged.health -= 5
+        @damaged.save
+    end
+        
+
     def buy
         @farmer = current_farmer
         @freeSpace = false
