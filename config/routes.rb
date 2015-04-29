@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
   devise_for :farmers
   resources :farmers
-  patch 'plot', to: 'plants#plot'
-  get 'plot', to: 'plants#plot'
+  patch 'remove', to: 'plants#remove'
+  get 'remove', to: 'plants#remove'
   patch 'harvest', to: 'plants#harvest'
   get 'harvest', to: 'plants#harvest'
   patch 'water', to: 'plants#water'

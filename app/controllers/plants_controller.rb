@@ -1,15 +1,11 @@
 class PlantsController < ApplicationController
-
-    def plot
+    def remove
         if !current_farmer.dolladollabillz?
             @current_farmer.dolladollabillz = 0
         end
         current_farmer.dolladollabillz += 2
         current_farmer.save
-        @plotted = Plant.find(params[:id])
-        # @plotted.space_id = current_space.id
-        @plotted.save
-        redirect_to root_path
+        redirect_to current_farmer
     end
 
     def harvest
@@ -30,7 +26,7 @@ class PlantsController < ApplicationController
     def water
         @watered = Plant.find(params[:id])
         if !@watered.health?
-            @watered.health = 0
+            @watered.health = 100
         end
         @watered.health += 10
         @watered.save

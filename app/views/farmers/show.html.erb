@@ -43,6 +43,9 @@ $(document).ready(function(){
 </head>
 <body>
      <% if current_farmer.id == @farmer.id %>
+    <p><%= link_to remove_path(id: @plant), class: 'btn btn-standard' do %>
+   Remove the Weed!
+    <% end %></p>
       <%= link_to plants_new_path, class: 'btn btn-medium' do %>Breed New Plant
       <% end %>
     <% end %>
