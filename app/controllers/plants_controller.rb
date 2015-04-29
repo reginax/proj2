@@ -28,13 +28,20 @@ class PlantsController < ApplicationController
 
     def water
         @watered = Plant.find(params[:id])
+        if !@watered.health?
+            @watered.health = 0
+        end
         @watered.health += 10
         @watered.save
-        redirect_to @watered.space
+        redirect_to current_farmer
     end
 
     def new
         @plant = Plant.new
+    end
+
+    def steal
+
     end
 
     def buy
@@ -71,7 +78,7 @@ class PlantsController < ApplicationController
 
      def create
         @plant = Plant.create(plant_params)
-        @plant.health = 100
+        @plant.health = 10
         @plant.level = 1
         @plant.space_id = current_farmer.space.id
         if @plant.save
