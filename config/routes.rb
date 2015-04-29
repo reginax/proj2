@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get '/show', to: 'store#show'
   patch 'buy', to: 'plants#buy'
   get 'buy', to: 'plants#buy'
+  patch 'steal', to: 'plants#steal'
+  get 'steal', to: 'plants#steal'
 
 end

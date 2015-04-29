@@ -41,7 +41,11 @@ class PlantsController < ApplicationController
     end
 
     def steal
-
+        @that = Plant.find(params[:id])
+        @mine = current_farmer.spaces.where(filled:0)
+        @mine.plant = @that
+        @that.destroy
+        @mine.plant.save
     end
 
     def buy
