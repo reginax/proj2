@@ -19,11 +19,10 @@ class PlantsController < ApplicationController
         current_farmer.dolladollabillz += 5
         current_farmer.save
         @harvested = Plant.find(params[:id])
+        @harvested.space.filled = 0
+        @harvested.space.save
         @harvested.destroy
-        @harvested.save
-      # incorrect logic
-        # targetspace = current_farmer.spaces.where(filled:1).sample
-        # targetspace.filled = 0
+        # @harvested.save
         @farmer.spaces.save
         redirect_to root_path
     end
