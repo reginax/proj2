@@ -23,7 +23,6 @@ class PlantsController < ApplicationController
         @harvested.space.save
         @harvested.destroy
         # @harvested.save
-        @farmer.spaces.save
         redirect_to root_path
     end
 
