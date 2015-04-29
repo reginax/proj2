@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
   	# flash[:notice] = "todo, change css for gritter"
     # gflash :success => "The product has been created successfully!"
@@ -7,5 +6,4 @@ class HomeController < ApplicationController
     @plant = spaceless_plant.sample
     # @plant.space_id = 1
   end
-
 end

@@ -27,8 +27,10 @@ while (id <= 6)
   Plant.create name: "Peach", level: rand(1..20), health:0, space_id: id + 1
   s = Space.find(id)
   s.filled = 1
+  s.save
   s = Space.find(id + 1)
   s.filled = 1
+  s.save
   id += 2
 end
 

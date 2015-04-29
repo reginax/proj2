@@ -1,8 +1,8 @@
 <% if true %>
 <!-- <%= js add_gritter("Do you have what it takes to be the best farmer?", title:"Welcome to FarmVillage", time: 2000, :nodom_wrap  => true, position:"bottom_left") %> -->
 <% end %>
-<% if !current_farmer.dolladollabillz %>
-  <%current_farmer.dolladollabillz = 20%>
+<% if current_farmer and !current_farmer.dolladollabillz %>
+<% current_farmer.dolladollabillz = 20 %>
 <% end %>
 <p> <%= link_to farmers_path, class: 'btn btn-standard' do %>
 <%= Farmer.count %> Farmers registered<% end %> </p>
