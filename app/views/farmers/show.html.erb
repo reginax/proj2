@@ -66,8 +66,9 @@ $(document).ready(function(){
       <% end %>
     <% end %>
    </div>  
-                      
-  <table class="table table-striped">
+</div>
+ <div class="container">                     
+  <table class="sortable">
     <thead>
     <tr>
         <th>ID</th>
@@ -83,7 +84,11 @@ $(document).ready(function(){
         <tr>
           <td><%= p.id %></td>
           <td><%= p.name %></td>
-          <td><%= p.health %></td>
+          <td><% if !p.health %>
+                <% p.health = 100 %>
+              <% end %>
+            <%= p.health %>
+          </td>
           <td><%= link_to water_path(id: @plant), class: 'btn btn-medium' do %>Water
               <% end %></td>
           <td><%= link_to harvest_path(id: @plant), class: 'btn btn-medium' do %>Harvest
