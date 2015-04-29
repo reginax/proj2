@@ -49,7 +49,7 @@ class PlantsController < ApplicationController
 			@farmer.dolladollabillz -= 5
 		end
 		@farmer.save
-	    newplant = Plant.create(name: params[:type])
+	    newplant = Plant.create(name: params[:type], health: 100)
 	    targetspace = current_farmer.spaces.where(filled:0).sample
 	    newplant.space = targetspace
 	    targetspace.plant = newplant
