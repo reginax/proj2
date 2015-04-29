@@ -36,17 +36,14 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
-
-<div class="container">
-  <h2><%= @farmer.name if @farmer.name %>'s Precious</h2>
- <% if current_farmer.id == @farmer.id %>
-    <%= link_to plants_new_path, class: 'btn btn-medium' do %>Breed New Plant
+     <% if current_farmer.id == @farmer.id %>
+      <%= link_to plants_new_path, class: 'btn btn-medium' do %>Breed New Plant
+      <% end %>
     <% end %>
-  <% end %>
-</div>
 <div class="container">
   <div class="row">
-    <h1>Your Crops</h1>
+    <h1><%= @farmer.name if @farmer.name %>'s Crops</h1>
+
       <% count = 0 %>
       <% @farmer.spaces.each do |s| %>
       <% count += 1 %>
