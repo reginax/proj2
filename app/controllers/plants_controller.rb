@@ -41,7 +41,7 @@ class PlantsController < ApplicationController
         @farmer = current_farmer
         @freeSpace = false
         for s in @farmer.spaces
-            if s.filled = 0 
+            if s.filled == 0 
                 @freeSpace = true
             end
         end
