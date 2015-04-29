@@ -44,7 +44,7 @@ class PlantsController < ApplicationController
 			@farmer.dolladollabillz = 0
 		end
 		if @farmer.dolladollabillz < 5
-			flash[:error] = "Not enough money"
+			flash[:error] = "Not enough dolladollabillz!"
 		else 
 			@farmer.dolladollabillz -= 5
 		end

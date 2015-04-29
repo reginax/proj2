@@ -21,13 +21,14 @@ $(document).ready(function(){
    $('a.modalLink').click(function(e){
     var id = $(this).attr('href');
     if (id=="#first") {
-        $("#first").modal('farmers/1');
+        $("#first").modal('show');
     } else {
-        $("#second").modal('farmers/1');
+        $("#second").modal('show');
     }
   });
 });
 </script>
+
 <style type="text/css">
     .bs-example{
       margin: 0px;
@@ -35,35 +36,36 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
+
 <div class="container">
   <h2><%= @farmer.name if @farmer.name %>'s Precious</h2>
  <% if current_farmer.id == @farmer.id %>
     <%= link_to plants_new_path, class: 'btn btn-medium' do %>Breed New Plant
-        <% end %>
-<% end %>
-
+    <% end %>
+  <% end %>
+</div>
 <div class="container">
   <div class="row">
     <h1>Your Crops</h1>
-    <% count = 0 %>
-    <% @farmer.spaces.each do |s| %>
-    <% count += 1 %>
-    <% p = s.plant %>
-    <% if !p %>
-    <img src="//placehold.it/99x99/449955/FFF" class="btn btn-sm">
-    <% else %>
-    <% if p.name == "Watermelon" %>
-    <a href="#second" class="modalLink"><%=image_tag("Watermelon.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
-    <% end %>
-    <% if p.name == "Peach" %>
-    <a href="#first" class="modalLink"><%=image_tag("Peach.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
-    <% end %>
-    <% end %>
+      <% count = 0 %>
+      <% @farmer.spaces.each do |s| %>
+      <% count += 1 %>
+      <% p = s.plant %>
+      <% if !p %>
+         <img src="//placehold.it/99x99/449955/FFF" class="btn btn-sm">
+      <% else %>
+        <% if p.name == "Watermelon" %>
+            <a href="#second" class="modalLink"><%=image_tag("Watermelon.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
+        <% end %>
+        <% if p.name == "Peach" %>
+            <a href="#first" class="modalLink"><%=image_tag("Peach.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
+        <% end %>
+      <% end %>
     <% if count % 3 == 0 %>
       <br>
       <% end %>
     <% end %>
-</div>  
+   </div>  
                       
   <table class="table table-striped">
     <thead>
@@ -73,18 +75,24 @@ $(document).ready(function(){
         <th>Health</th>
     </tr>
     </thead>
+
     <tbody>
-    <% @farmer.spaces.each do |s| %>
-    <% p = s.plant %>
-    <% if p %> 
-    <tr>
-      <td><%= p.id %></td>
-      <td><%= p.name %></td>
-      <td><%= p.health %></td>
-    </tr>
+      <% @farmer.spaces.each do |s| %>
+      <% p = s.plant %>
+      <% if p %> 
+        <tr>
+          <td><%= p.id %></td>
+          <td><%= p.name %></td>
+          <td><%= p.health %></td>
+          <td><%= link_to water_path(id: @plant), class: 'btn btn-medium' do %>Water
+              <% end %></td>
+          <td><%= link_to harvest_path(id: @plant), class: 'btn btn-medium' do %>Harvest
+              <% end %></td>
+        </tr>
+      <% end %>
     <% end %>
 
-</table>
+  </table>
 </div>
 
 <div id="first" class="modal fade">
@@ -99,11 +107,7 @@ $(document).ready(function(){
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <%= link_to harvest_path(id: @plant), class: 'btn btn-standard' do %>Harvest
-                  <% end %>
-                  <%= link_to water_path(id: @plant), class: 'btn btn-standard' do %>Water
-                  <% end %>
-                  <% end %>
+
               </div>
           </div>
       </div>
@@ -120,7 +124,7 @@ $(document).ready(function(){
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <%= link_to buy_path(type: "Watermelon"), class: 'btn btn-standard' do %>Purchase<% end %>
+
               </div>
           </div>
       </div>
