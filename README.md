@@ -35,7 +35,11 @@ Features:
 Division of Labor:
   
   Jennifer: Makes farmers and plants controllers, creates and adds images 
+  
   Jimmy: Makes spaces and farmers’ views; Gritter gem; debugging
+  
   Regina: Makes store and views; adds Bootstrap features 
+  
   Richard: Designs homepage; outlines writeup; debugging
+  
   Everyone: Screencast Demo
