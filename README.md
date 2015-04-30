@@ -10,15 +10,12 @@ Idea: An application where farmers manage a farm where they can water and harves
 Models and Description:
   
   Farmer
-    
     has name, email, id, spaces, currency; has many spaces
   
   Plants
-  
     has health and id; belongs to space
   
   Space
-  
     has plant and belongs to a farmer
 
 
@@ -35,11 +32,7 @@ Features:
 Division of Labor:
 
     Jennifer: Makes farmers and plants controllers, creates and adds images 
-    
     Jimmy: Makes spaces and farmers’ views; Gritter gem; debugging
-  
     Regina: Makes store and views; adds Bootstrap features 
-  
     Richard: Designs homepage; outlines writeup; debugging
-  
     Everyone: Screencast Demo
