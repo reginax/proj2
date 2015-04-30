@@ -1,4 +1,7 @@
 class PlantsController < ApplicationController
+  
+  @removed = false
+# not used anymore
     def remove
         if !current_farmer.dolladollabillz?
             @current_farmer.dolladollabillz = 0
@@ -19,6 +22,7 @@ class PlantsController < ApplicationController
         @harvested.space.save
         @harvested.destroy
         current_farmer.save
+        @removed = true
         # @harvested.save
         redirect_to current_farmer
     end
@@ -39,10 +43,11 @@ class PlantsController < ApplicationController
 
     def steal
         @that = Plant.find(params[:id])
-        @mine = current_farmer.spaces.where(filled:0)
+        @mine = current_farmer.spaces.where(filled:0).sample
         @mine.plant = @that
-        @that.destroy
+        @that.space = @mine
         @mine.plant.save
+        @mine.save
     end
 
     def squash
