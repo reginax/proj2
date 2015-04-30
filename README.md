@@ -24,12 +24,12 @@ Models and Description:
 
 Features:
   
-  Farmers can sign up and log in
-  Farmers can view their own crops
-  Farmers can view other farmers and their crops
-  Farmers can view the store
-  Farmers can water or harvest plants
-  Farmers can steal or squash other farmers' plants
+    Farmers can sign up and log in
+    Farmers can view their own crops
+    Farmers can view other farmers and their crops
+    Farmers can view the store
+    Farmers can water or harvest plants
+    Farmers can steal or squash other farmers' plants
 
 
 Division of Labor:
