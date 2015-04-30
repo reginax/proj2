@@ -7,14 +7,14 @@ Idea: An application where farmers manage a farm where they can water and harves
 
 Models and Description:
   
-  Farmer
-    has name, email, id, spaces, and currency; has many spaces
+    Farmer
+      has name, email, id, spaces, and currency; has many spaces
   
-  Plants
-    has health and id; belongs to space
+    Plants
+      has health and id; belongs to space
   
-  Space
-    has plant and belongs to a farmer
+    Space
+      has plant and belongs to a farmer
 
 
 Features:
