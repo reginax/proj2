@@ -15,8 +15,8 @@ class PlantsController < ApplicationController
         if !current_farmer.dolladollabillz?
             current_farmer.dolladollabillz = 0
         end
-        current_farmer.dolladollabillz += 5
         harvested = Plant.find(params[:id])
+        current_farmer.dolladollabillz += harvested.health
         harvested.space.filled = 0
         # @harvested.space.plant = nil
         harvested.space.save
@@ -83,7 +83,7 @@ class PlantsController < ApplicationController
         else 
             @farmer.dolladollabillz -= 5
         end
-        @newplant = Plant.create(name: params[:type], health: 10)
+        @newplant = Plant.create(name: params[:type], health: 5)
         @targetspace = @farmer.spaces.where(filled:0).sample
         @newplant.space = @targetspace
         @targetspace.plant = @newplant
