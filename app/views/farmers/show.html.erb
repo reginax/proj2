@@ -233,9 +233,9 @@ $(document).ready(function(){
           </td>
           <% if current_farmer.id != @farmer.id %>
           <td>
-          <%= link_to steal_path(id: p.id), class: 'btn btn-medium' do %>Steal<% end %></td>
+          <%= link_to steal_path(id: p.id, f:@farmer.id), class: 'btn btn-medium' do %>Steal<% end %></td>
           <td>
-          <%= link_to squash_path(id: p.id), class: 'btn btn-medium' do %>Squash<% end %></td>
+          <%= link_to squash_path(id: p.id, f:@farmer.id), class: 'btn btn-medium' do %>Squash<% end %></td>
 
 
           <% end %>

@@ -16,11 +16,11 @@ class PlantsController < ApplicationController
             current_farmer.dolladollabillz = 0
         end
         current_farmer.dolladollabillz += 5
-        @harvested = Plant.find(params[:id])
-        @harvested.space.filled = 0
+        harvested = Plant.find(params[:id])
+        harvested.space.filled = 0
         # @harvested.space.plant = nil
-        @harvested.space.save
-        @harvested.destroy
+        harvested.space.save
+        harvested.destroy
         current_farmer.save
         @removed = true
         # @harvested.save
@@ -48,15 +48,17 @@ class PlantsController < ApplicationController
         @that.space = @mine
         @mine.plant.save
         @mine.save
+        redirect_to ("/farmers/" + params[:f])
     end
 
     def squash
-        @damaged = Plant.find(params[:id])
-        if !@damaged.health?
-            @damaged.health = 0
+      tosquish = Plant.find(params[:id])
+        if !tosquish.health?
+            tosquish.health = 0
         end
-        @damaged.health -= 5
-        @damaged.save
+        tosquish.health -= 5
+        tosquish.save
+        redirect_to ("/farmers/" + params[:f])
     end
         
 
@@ -81,7 +83,7 @@ class PlantsController < ApplicationController
         else 
             @farmer.dolladollabillz -= 5
         end
-        @newplant = Plant.create(name: params[:type])
+        @newplant = Plant.create(name: params[:type], health: 10)
         @targetspace = @farmer.spaces.where(filled:0).sample
         @newplant.space = @targetspace
         @targetspace.plant = @newplant

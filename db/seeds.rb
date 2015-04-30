@@ -23,8 +23,8 @@ end
 # Make Plant
 id = 1
 while (id <= 6)
-  Plant.create name: "Watermelon", level: rand(1..20), health:0, space_id: id
-  Plant.create name: "Peach", level: rand(1..20), health:0, space_id: id + 1
+  Plant.create name: "Watermelon", level: rand(1..20), health:0, space_id: id, health: 10
+  Plant.create name: "Peach", level: rand(1..20), health:0, space_id: id + 1, health: 10
   s = Space.find(id)
   s.filled = 1
   s.save
@@ -32,5 +32,17 @@ while (id <= 6)
   s.filled = 1
   s.save
   id += 2
+end
+
+
+count = 1
+while (count <= 4)
+  s = Farmer.find(2).spaces.where(filled:0).sample
+  p = Plant.create name: "Lemon", level: rand(1..20), health:0, space_id: s.id, health: 10
+  s.plant = p
+  p.space = s
+  s.filled = 1
+  s.save
+  count += 1
 end
 

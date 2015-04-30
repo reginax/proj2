@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get 'steal', to: 'plants#steal'
   patch 'squash', to: 'plants#squash'
   get 'squash', to: 'plants#squash'
+  resources :plants
 
 end
