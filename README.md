@@ -2,7 +2,7 @@ Title: FarmVillage
 
 Team Members: Jennifer Be, Jimmy Lee, Richard Qian, Regina Xu
 
-Demo Link: tinyurl.com/supercaboose (https://gentle-retreat-8798.herokuapp.com/)
+Demo Link: https://tinyurl.com/supercaboose (https://gentle-retreat-8798.herokuapp.com/)
 
 Idea: An application where farmers manage a farm where they can water and harvest plants,  purchase plants from a store, and steal or squash other farmers’ plants.
 
