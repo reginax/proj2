@@ -1,7 +1,5 @@
 Title: FarmVillage
-
-Team Members: Jennifer Be, Jimmy Lee, Richard Qian, 
-Regina Xu
+Team Members: Jennifer Be, Jimmy Lee, Richard Qian, Regina Xu
 
 Demo Link: supercaboose.com
 
@@ -10,7 +8,7 @@ Idea: An application where farmers manage a farm where they can water and harves
 Models and Description:
   
   Farmer
-    has name, email, id, spaces, currency; has many spaces
+    has name, email, id, spaces, and currency; has many spaces
   
   Plants
     has health and id; belongs to space
