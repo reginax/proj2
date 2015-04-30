@@ -26,10 +26,12 @@ $(document).ready(function(){
         $("#watermelon").modal('show');
     } else if (id == "#lemon") {
         $("#lemon").modal('show');
-    } else if (id == "#weed") {
-        $("#weed").modal('show');
+    } else if (id == "#starfruit") {
+        $("#starfruit").modal('show');
     } else if (id == "#pom") {
         $("#pom").modal('show');
+    } else if (id == "#pineapple") {
+        $("#pineapple").modal('show');
     }
   });
 });
@@ -122,17 +124,43 @@ $(document).ready(function(){
       </div>
   </div>   
         <% end %>
-        <% if p.name == "Weed" %>
-            <a href="#weed" class="modalLink"><%=image_tag("Weed.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
-          <div id="weed" class="modal fade">
+        <% if p.name == "Starfruit" %>
+            <a href="#starfruit" class="modalLink"><%=image_tag("Starfruit.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
+              <div id="starfruit" class="modal fade">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                              <h4 class="modal-title">Starfruity stuff</h4>
+                          </div>
+                          <div class="modal-body">
+                              <p>In the Ancient Greek mythology, the starfruit was also known as the "fruit of the dead".</p>
+                          </div>
+                  <div class="modal-footer">
+                    <% if current_farmer.id == @farmer.id %>
+                  <%= link_to harvest_path(id: p.id), class: 'btn btn-medium' do %>Harvest
+                  <% end %>
+                  <% end %>
+                  <%= link_to water_path(id: p.id), class: 'btn btn-medium' do %>Water
+                  <% end %>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+              </div>
+          </div>
+      </div>
+  </div>   
+        <% end %>
+        <% if p.name == "Pineapple" %>
+            <a href="#pineapple" class="modalLink"><%=image_tag("Pineapple.png", height: '16.88%', width: '16.88%', alt: 'Logo', align: 'center')%></a>
+          <div id="pineapple" class="modal fade">
               <div class="modal-dialog">
                   <div class="modal-content">
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title">Cannabis sativa</h4>
+                          <h4 class="modal-title">Pineapple sativa</h4>
                       </div>
                   <div class="modal-body">
-                  <p>Cannabis has long been used for hemp fibre, for seed and seed oils, and for medicinal purposes.</p>
+                  <p>Pineapple has long been used for hemp fibre, for seed and seed oils, and for medicinal purposes.</p>
                   </div>
                   <div class="modal-footer">
                     <% if current_farmer.id == @farmer.id %>

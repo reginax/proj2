@@ -25,10 +25,12 @@ $(document).ready(function(){
         $("#watermelon").modal('show');
     } else if (id == "#lemon") {
         $("#lemon").modal('show');
-    } else if (id == "#weed") {
-        $("#weed").modal('show');
+    } else if (id == "#pineapple") {
+        $("#pineapple").modal('show');
     } else if (id == "#pom") {
         $("#pom").modal('show');
+    } else if (id == '#starfruit') {
+        $("#starfruit").modal('show');
     }
   });
 });
@@ -48,7 +50,8 @@ $(document).ready(function(){
      <a href="#watermelon" class="modalLink"><%=image_tag("Watermelon.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
      <a href="#lemon" class="modalLink"><%=image_tag("Lemon.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
      <a href="#pom" class="modalLink"><%=image_tag("Pomegranate.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
-     <a href="#weed" class="modalLink"><%=image_tag("Weed.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
+     <a href="#pineapple" class="modalLink"><%=image_tag("Pineapple.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
+     <a href="#starfruit" class="modalLink"><%=image_tag("Starfruit.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
   </div>
 </div>
 </div>
@@ -124,21 +127,39 @@ $(document).ready(function(){
           </div>
       </div>
   </div>  
-  <div id="weed" class="modal fade">
+  <div id="starfruit" class="modal fade">
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title">Cannabis sativa</h4>
+                  <h4 class="modal-title">starfruit stuff</h4>
               </div>
               <div class="modal-body">
-                  <p>Cannabis has long been used for hemp fibre, for seed and seed oils, and for medicinal purposes.</p>
+                  <p>starfruit stuff richard.</p>
                   <p class="text-warning"><small>Price: 5 dolladollabillz</small></p>
               </div>
               <div class="modal-footer">
-                  <%= link_to buy_path(type: "Weed"), class: 'btn btn-standard' do %>Purchase<% end %>
+                  <%= link_to buy_path(type: "Starfruit"), class: 'btn btn-standard' do %>Purchase<% end %>
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
           </div>
       </div>
   </div>  
+  <div id="pineapple" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">pineapple stuff</h4>
+              </div>
+              <div class="modal-body">
+                  <p>pineapple stuff richard.</p>
+                  <p class="text-warning"><small>Price: 5 dolladollabillz</small></p>
+              </div>
+              <div class="modal-footer">
+                  <%= link_to buy_path(type: "Pineapple"), class: 'btn btn-standard' do %>Purchase<% end %>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div> 
