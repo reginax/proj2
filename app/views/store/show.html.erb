@@ -46,36 +46,17 @@ $(document).ready(function(){
   <div class="row">
     <h1>Store</h1>
     <div class="row">
-         <a href="#lemon" class="modalLink"><%=image_tag("Lemon.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
+     <a href="#lemon" class="modalLink"><%=image_tag("Lemon.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
      <a href="#watermelon" class="modalLink"><%=image_tag("Watermelon.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
      <a href="#starfruit" class="modalLink"><%=image_tag("Starfruit.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
 
      <a href="#pom" class="modalLink"><%=image_tag("Pomegranate.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
      <a href="#pineapple" class="modalLink"><%=image_tag("Pineapple.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
     <a href="#peach" class="modalLink"><%=image_tag("Peach.png", height: '25%', width: '25%', alt: 'Logo', align: 'center')%></a>
-
-
   </div>
 </div>
 </div>
-<div id="watermelon" class="modal fade">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title">Citrullus lanatus</h4>
-              </div>
-              <div class="modal-body">
-                  <p>Watermelon is both fruit and vegetable. The rind is entirely edible!</p>
-                  <p class="text-warning"><small>Price: 5 dolladollabillz</small></p>
-              </div>
-              <div class="modal-footer">
-                  <%= link_to buy_path(type: "Watermelon"), class: 'btn btn-standard' do %>Purchase<% end %>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-          </div>
-      </div>
-  </div> 
+
 <div id="watermelon" class="modal fade">
       <div class="modal-dialog">
           <div class="modal-content">
@@ -102,7 +83,7 @@ $(document).ready(function(){
                   <h4 class="modal-title">Averrhoa carambola</h4>
               </div>
               <div class="modal-body">
-                  <p>starfruit stuff richard.</p>
+                  <p>Star fruit is a small, bushy evergreen tree that grows very well under hot, humid, tropical conditions.</p>
                   <p class="text-warning"><small>Price: 5 dolladollabillz</small></p>
               </div>
               <div class="modal-footer">
@@ -154,10 +135,9 @@ $(document).ready(function(){
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                   <h4 class="modal-title">Ananas comosus</h4>
-                  </div>
-                  <div class="modal-body">
-                  <p>It takes almost 3 years for a single pineapple to reach maturation (which makes the price tag a bit more understandable). </p>
-                  </div>
+                </div>
+                <div class="modal-body">
+                  <p>One of these is not like the other.</p>
                   <p class="text-warning"><small>Price: 10 dolladollabillz</small></p>
               </div>
               <div class="modal-footer">
