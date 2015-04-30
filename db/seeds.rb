@@ -38,11 +38,14 @@ end
 count = 1
 while (count <= 4)
   s = Farmer.find(2).spaces.where(filled:0).sample
-  p = Plant.create name: "Lemon", level: rand(1..20), health:0, space_id: s.id, health: 10
+  if count % 2 == 1
+      p = Plant.create name: "Lemon", level: rand(1..20), health:0, space_id: s.id, health: 10
+  else
+      p = Plant.create name: "Pomegranate", level: rand(1..20), health:0, space_id: s.id, health: 10
+  end
   s.plant = p
   p.space = s
   s.filled = 1
   s.save
   count += 1
 end
-
