@@ -57,6 +57,13 @@ class PlantsController < ApplicationController
             tosquish.health = 0
         end
         tosquish.health -= 5
+        if tosquish.health <= 0
+          sp = tosquish.space
+          sp.filled = 0
+          sp.plant = nil
+          tosquish.destroy
+          sp.save
+        end
         tosquish.save
         redirect_to ("/farmers/" + params[:f])
     end
