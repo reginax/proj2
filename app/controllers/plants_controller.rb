@@ -42,6 +42,11 @@ class PlantsController < ApplicationController
     end
 
     def steal
+      if current_farmer.spaces.where(filled:0).size == 0
+        flash[:error] = "Not enough space in your farm! Swiper no swiping!"
+        redirect_to ("/farmers/" + params[:f])
+        return
+      end
         @that = Plant.find(params[:id])
         @mine = current_farmer.spaces.where(filled:0).sample
         @mine.plant = @that
@@ -77,20 +82,24 @@ class PlantsController < ApplicationController
                 @freeSpace = true
             end
         end
-        if !@freeSpace
-          flash[:error] = "No more space in your farm!"
+      if @farmer.spaces.where(filled:0).size == 0
+        flash[:error] = "Not enough space in your farm!"
+        redirect_to show_path
           return
-        end
+      end
+        
         if !@farmer.dolladollabillz?
             @farmer.dolladollabillz = 50
         end
         if @farmer.dolladollabillz < 5
           flash[:error] = "Not enough dolladollabillz!"
+          redirect_to show_path
           return
         else 
             @farmer.dolladollabillz -= 5
         end
         @newplant = Plant.create(name: params[:type], health: 5)
+        
         @targetspace = @farmer.spaces.where(filled:0).sample
         @newplant.space = @targetspace
         @targetspace.plant = @newplant
